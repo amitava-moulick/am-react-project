@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  let [data, setData] = useState("Click to change");
+
+  let [i, seti] = useState(0);
+  function apple() {
+    seti(i + 1);
+    if (i % 2 == 0) {
+      setData("Even");
+    } else if (i % 2 == 1) {
+      setData("Odd");
+    } else {
+      setData("nothing");
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>{data}</h1>
+      <button onClick={apple}>Click me</button>
+      <h2>Present number is {i}</h2>
+    </>
   );
 }
 
