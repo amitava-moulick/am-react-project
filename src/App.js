@@ -20,7 +20,7 @@ function App() {
     <>
       <h1>{data}</h1>
       <button onClick={apple}>Click me</button>
-      <h2>Present number is {i}</h2>
+      <h2>Present number is: {i}</h2>
     </>
   );
 }
